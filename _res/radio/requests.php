@@ -3,7 +3,7 @@
 	if( !preg_match( "/index.php/i", $_SERVER['PHP_SELF'] ) ) { die(); }
 	
 	// Set the location of the requests.status file
-	$requests_status = "../../_inc/requests.status";
+	$requests_status = "_inc/requests.status";
 	
 	// First, we check the availiability of the status file
 	if ( file_exists( $requests_status ) ) {
@@ -32,7 +32,7 @@
 			echo "</div>";
 
 		}
-		elseif ( isset( $_GET['toggle_requests'] ) ) {
+		elseif ( isset( $_GET['status_toggle'] ) ) {
 		
 			// First, we find out the current state of requests
 			if ( $result == "0" ) {
@@ -44,13 +44,32 @@
 				fwrite( $handle, "1" );
 				fclose( $handle );
 				
+				// And set the new result
+				$result = "1";
+				
 			}
 			else {
 			
-				// If it is already enabled, we disable it in one command, remove it!
-				@unlink( $requests_status );
+				// If it is already enabled, we disable it
+				$handle = fopen( $requests_status, 'w' );
+		
+				// And write the data we downloaded to it
+				fwrite( $handle, "0" );
+				fclose( $handle );
 				
-			}			
+				// And set the new result
+				$result = "0";
+				
+			}
+			
+			// And to save me some hassle, a one return message reflecting the new status
+			echo "<div class=\"square good\" align=\"left\">";
+			echo "<strong>Success</strong>";
+			echo "<br />";
+			echo "Request line has now been ";
+			if ( $result == "0" ) { echo "disabled"; } else { echo "enabled"; }
+			echo "</div>";
+				
 		}
 		elseif( isset( $_GET['clear_all_requests'] ) and ( $user->hasGroup( '4' ) or $user->hasGroup( '5' ) ) ) {
 			
