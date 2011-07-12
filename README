@@ -6,6 +6,17 @@ radiPanel: Requests Toggle is an extension of the PHP / MySQL powered radiPanel 
 == Licence ==
 radiPanel: Requests Toggle is licenced under a Creative Commons Attribution-NonCommercial-ShareAlike 2.0 UK: England & Wales Licence, terms of which can be viewed at http://creativecommons.org/licenses/by-nc-sa/2.0/uk/ 
 
+== Installation ==
+Installation of radiPanel: Requests Toggle couldn't be more simple! Just follow these really easy steps!
+
+1) Extract the .zip file you downloaded (If you're reading this, then you probably have done this)
+2) Upload all files contained in this file to their respective locations on your system. For reference the following files are modified:
+
+*- /_frontend/requests.php
+*- /_res/radio/requests.php
+
+3) Enjoy!
+
 == Abuse ==
 Please be sure to read the terms of the licence for which this addon is released. Failure to adhere to the terms of the licence will result in the immediate and automatic termination of this licence. Know of someone selling this software? Drop me an e-mail at software_abuse@radipanel.com or contact me by private message at clubhabboforum.net (Username: iCame).
 
