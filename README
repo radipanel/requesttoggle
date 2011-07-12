@@ -12,9 +12,15 @@ Installation of radiPanel: Requests Toggle couldn't be more simple! Just follow 
 1) Extract the .zip file you downloaded (If you're reading this, then you probably have done this)
 2) Upload all files contained in this file to their respective locations on your system. For reference the following files are modified:
 
-*- /_frontend/requests.php
-*- /_res/radio/requests.php
+(*) _frontend/requests.php
+(*) _res/radio/requests.php
+(+) _inc/requests.status
 
+Symbols:
+(+) Files added in this released
+(*) Files modified in this release
+(-) Files removed in this release
+ 
 3) Enjoy!
 
 == Abuse ==
